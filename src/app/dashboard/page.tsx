@@ -28,7 +28,7 @@ const Dashboard = () => {
     // Fetch OneDrive files
     axios
       .get(`http://localhost:4000/onedrive/files?token=${token}`)
-      .then((response) => setFiles(response.data.value))
+      .then((response) => setFiles(response.data))
       .catch((error) => console.error(error));
   }, [router]);
 
