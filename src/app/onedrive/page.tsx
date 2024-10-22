@@ -1,13 +1,11 @@
 "use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { msalInstance } from "../../msalConfig";
-import { storeTokenWithExpiration } from "./utils/token";
+import { msalInstance } from "../../../msalConfig";
+import { useRouter } from "next/router";
+import { storeTokenWithExpiration } from "../utils/token";
 
-export default function Home() {
+const OneDriveLogin = () => {
   const router = useRouter();
-
   const initializeMsal = async () => {
     await msalInstance.initialize();
   };
@@ -36,13 +34,11 @@ export default function Home() {
   };
 
   return (
-    <>
-      <h3>Clerk</h3>
-      Click here to <Link href={"/login"}>Login</Link> to test Clerk.
-      <hr />
-      <h3>Microsoft Graph API Testing</h3>
-      <button onClick={login}>Login</button>
-      <hr />
-    </>
+    <div>
+      <h1>OneDrive Integration</h1>
+      <button onClick={login}>Login with Microsoft</button>
+    </div>
   );
-}
+};
+
+export default OneDriveLogin;

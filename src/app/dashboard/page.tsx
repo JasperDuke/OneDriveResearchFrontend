@@ -32,22 +32,6 @@ const Dashboard = () => {
       .catch((error) => console.error(error));
   }, [router]);
 
-  // single download file
-  //   const downloadFile = async (fileId: string) => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:4000/onedrive/download/${fileId}?token=${localStorage.getItem(
-  //           "driveToken"
-  //         )}`
-  //       );
-  //       if (response.status === 200) {
-  //         alert("Successfully downloaded");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error downloading the file:", error);
-  //     }
-  //   };
-
   return (
     <div>
       <h1>Welcome, {user ? user?.displayName : "User"}</h1>
